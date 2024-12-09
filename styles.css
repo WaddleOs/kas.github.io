@@ -6,40 +6,60 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f8f9fa;
-  color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), 
+    url('https://storage.evrimagaci.org/old/content_media/8c600c06bb07fb4188765ecca4e23219.jpg'); /* Arka plan görseli */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f8f9fa;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+/* Konteyner */
 .main-container {
   width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.85); /* Saydam beyaz zemin */
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   color: #343a40;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
   animation: fadeIn 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
   font-size: 1.2rem;
-  color: #6c757d;
+  color: #868e96;
   margin-top: 10px;
+  font-weight: 300;
 }
 
 /* Tablo stili */
@@ -52,47 +72,65 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  position: relative;
+  font-weight: 500;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.3s ease;
 }
 
-/* Yüzdeye göre renkler */
+/* Tablo Başlıkları */
+th {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Tablo Hücreleri */
+td {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-size: 1rem;
+}
+
 td[data-value="0"] {
-  background-color: #f1f1f1;
+  background-color: #f1f3f5;
 }
 
 td[data-value="10"],
 td[data-value="15"] {
-  background-color: #f7c948;
-  color: white;
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 td[data-value="20"],
 td[data-value="25"] {
-  background-color: #f77f00;
-  color: white;
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 td[data-value="30"],
 td[data-value="40"] {
-  background-color: #ff5c8d;
-  color: white;
+  background-color: #d1ecf1;
+  color: #0c5460;
 }
 
 td[data-value="50"],
 td[data-value="60"] {
-  background-color: #2f99d9;
-  color: white;
+  background-color: #c3e6cb;
+  color: #155724;
 }
 
 /* Hover efektleri */
 tr:hover {
-  background-color: #e2e2e2;
-}
-
-tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #e2e6ea;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
 /* Animasyonlar */
@@ -106,31 +144,34 @@ tr:nth-child(even) {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-th {
-  background: linear-gradient(45deg, #4CAF50, #388E3C);
-  color: white;
-  font-weight: bold;
-  animation: fadeIn 1s ease-out;
-}
-
+/* Footer */
 footer {
   text-align: center;
-  margin-top: 30px;
-  color: #6c757d;
+  margin-top: 40px;
+  color: #868e96;
   font-size: 0.9rem;
+  font-weight: 300;
 }
 
 /* Mobil uyumluluk */
 @media (max-width: 768px) {
+  .main-container {
+    padding: 20px;
+  }
+
   header h1 {
-      font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   table {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   th, td {
-      padding: 10px;
+    padding: 12px;
+  }
+
+  td {
+    font-size: 0.9rem;
   }
 }
